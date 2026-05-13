@@ -1,1 +1,107 @@
+#include<iostream>
+using namespace std;
 
+int main{
+                        // LEVEL- 3 Logical Operators & Compound Statem------ 
+
+// Que 1 Take a character and check if it is a letter, a digit, or neither.
+
+char ch;
+    cout << "Enter a character: ";
+    cin >> ch;
+
+    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+        cout << ch << " is a letter." << endl;
+    } 
+    else if (ch >= '0' && ch <= '9') {
+        cout << ch << " is a digit." << endl;
+    } 
+    else {
+        cout << ch << " is neither a letter nor a digit." << endl;
+    }
+    return 0;
+
+
+
+    // Que 2 Take a number and print “Fizz” if divisible by 3, “Buzz” if divisible by 5, and “FizzBuzz” if divisible by both.
+
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    // Check divisibility by both 3 and 5 first
+    if (num % 3 == 0 && num % 5 == 0) {
+        cout << "FizzBuzz" << endl;
+    } 
+    else if (num % 3 == 0) {
+        cout << "Fizz" << endl;
+    } 
+    else if (num % 5 == 0) {
+        cout << "Buzz" << endl;
+    } 
+    else {
+        cout << num << " is not divisible by 3 or 5." << endl;
+    }
+    return 0;
+
+
+    // Que 3 Take three numbers and print the median value (neither maximum nor minimum).
+
+    int a, b, c;
+    cout << "Enter three numbers: ";
+    cin >> a >> b >> c;
+
+    // Check if 'a' is the median
+    if ((b >= a && a >= c) || (c >= a && a >= b)) {
+        cout << "Median value is: " << a << endl;
+    }
+    // Check if 'b' is the median
+    else if ((a >= b && b >= c) || (c >= b && b >= a)) {
+        cout << "Median value is: " << b << endl;
+    }
+    // Otherwise, 'c' must be the median
+    else {
+        cout << "Median value is: " << c << endl;
+    }
+    return 0;
+
+
+
+    //Que 4 Take 24-hour time (hours and minutes) and print whether it is AM or PM.
+
+    int hours, minutes;
+    cout << "Enter hours (0-23) and minutes (0-59): ";
+    cin >> hours >> minutes;
+
+    // Validate time bounds first
+    if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+        cout << "Invalid time format!" << endl;
+    } 
+    else if (hours >= 12) {
+        cout << "PM" << endl;
+    } 
+    else {
+        cout << "AM" << endl;
+    }
+    return 0;
+
+
+    //Que 5 Take income and age, and check if eligible for tax (age > 18 and income > 5 L).
+
+    int age;
+    double income; // Using double to support fractional Lakhs if needed (e.g., 5.5)
+    
+    cout << "Enter your age: ";
+    cin >> age;
+    cout << "Enter your annual income (in Lakhs, e.g., 6.5 for 6.5L): ";
+    cin >> income;
+
+    // Both conditions must be true to be eligible for tax
+    if (age > 18 && income > 5.0) {
+        cout << "Eligible for tax." << endl;
+    } else {
+        cout << "Not eligible for tax." << endl;
+    }
+    return 0;
+
+}
