@@ -1,1 +1,84 @@
+#include <iostream>
+using namespace std;
 
+int main(){
+                                // LEVEL 4: Creative / Tricky Logical Scenarios
+
+// Que 1  Take coordinates (x, y) and check if the point lies on the X-axis, Y-axis, or at the origin.
+
+double x, y;
+    cout << "Enter coordinates (x y): ";
+    cin >> x >> y;
+
+    if (x == 0 && y == 0) {
+        cout << "The point is at the origin." << endl;
+    } 
+    else if (y == 0) {
+        cout << "The point lies on the X-axis." << endl;
+    } 
+    else if (x == 0) {
+        cout << "The point lies on the Y-axis." << endl;
+    } 
+    else {
+        cout << "The point lies in one of the quadrants at (" << x << ", " << y << ")." << endl;
+    }
+    return 0;
+
+
+    // Que 2 Take three numbers and check if they can form a Pythagorean triplet.
+
+long long a, b, c;
+    cout << "Enter three numbers: ";
+    cin >> a >> b >> c;
+
+    // Calculate squares
+    long long sqA = a * a;
+    long long sqB = b * b;
+    long long sqC = c * c;
+
+    // Check all three configurations for the hypotenuse
+    if ((sqA + sqB == sqC) || (sqA + sqC == sqB) || (sqB + sqC == sqA)) {
+        cout << "Yes, they form a Pythagorean triplet." << endl;
+    } else {
+        cout << "No, they do not form a Pythagorean triplet." << endl;
+    }
+    return 0;
+
+
+    // Que 3 Take day and month and check if it forms a valid calendar date (ignoring leap years).
+
+    #include <iostream>
+using namespace std;
+
+int main() {
+    int day, month;
+    cout << "Enter day and month (DD MM): ";
+    cin >> day >> month;
+
+    // Basic bounds check
+    if (month < 1 || month > 12 || day < 1) {
+        cout << "Invalid Date" << endl;
+    }
+    else {
+        int maxDays = 0;
+
+        // Determine maximum days in the given month
+        if (month == 2) {
+            maxDays = 28; // Ignoring leap years
+        } 
+        else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            maxDays = 30;
+        } 
+        else {
+            maxDays = 31;
+        }
+
+        // Validate the day against the month's maximum days
+        if (day <= maxDays) {
+            cout << "Valid Date" << endl;
+        } else {
+            cout << "Invalid Date (This month only has " << maxDays << " days)" << endl;
+        }
+    }
+    return 0;
+}
