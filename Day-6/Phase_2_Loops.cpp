@@ -149,4 +149,88 @@ int n, sum = 0;
 
     cout << "Sum of odd numbers up to " << n << " is: " << sum << endl;
     return 0;
+
+
+
+                                // Phase- 4  Nested Loop ---->>>>
+                                    
+
+// Que 1. Print the multiplication tables for all numbers from 1 to 10.
+
+for (int i = 1; i <= 10; i++) {
+        cout << "Table of " << i << ":\n";
+        for (int j = 1; j <= 10; j++) {
+            cout << i << " x " << j << " = " << i * j << "\n";
+        }
+        cout << "----------------\n";
+    }
+    return 0;
+
+
+// Que 2. Print all possible pairs (i, j) from 1 to n
+
+int n;
+    cout << "Enter n: "; 
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << "\n"; // Newline after finishing a row of pairs
+    }
+    return 0;
+
+
+// Que 3. Count and print total factors for every number from 1 to n
+
+int n;
+    cout << "Enter n: "; cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        int factorCount = 0;
+        for (int j = 1; j <= i; j++) {
+            if (i % j == 0) {
+                factorCount++;
+            }
+        }
+        cout << "Number: " << i << " has " << factorCount << " factors.\n";
+    }
+    return 0;
+
+
+// Que 4. Print all prime numbers up to n using nested loops
+
+int n;
+    cout << "Enter n: "; cin >> n;
+
+    cout << "Prime numbers up to " << n << ": ";
+    for (int i = 2; i <= n; i++) {
+        bool isPrime = true;
+        // Optimization: check up to j * j <= i
+        for (int j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
+                isPrime = false;
+                break; // Exit inner loop early if a factor is found
+            }
+        }
+        if (isPrime) {
+            cout << i << " ";
+        }
+    }
+    return 0;
+
+
+// Que 5. Generate and print a number triangle pattern    
+
+int rows;
+    cout << "Enter number of rows: "; cin >> rows;
+
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << j << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
 }
